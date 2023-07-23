@@ -3,7 +3,7 @@ from twilio.rest import Client
 # Twilio account credentials
 # your account_sid and auth_token
 account_sid = "AC79ae0d21142aabbed9e899e6c30e349a" 
-auth_token = "9ba8622cf32fae52ed4a45baa5b52f54"
+auth_token = "a54360b1b564c3434feba7621b9e3b49"
 client = Client(account_sid, auth_token)
 
 # Define a dictionary of phone numbers and messages
