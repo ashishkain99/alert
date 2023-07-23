@@ -1,0 +1,24 @@
+from twilio.rest import Client
+
+# Twilio account credentials
+# your account_sid and auth_token
+account_sid = "AC79ae0d21142aabbed9e899e6c30e349a" 
+auth_token = "9ba8622cf32fae52ed4a45baa5b52f54"
+client = Client(account_sid, auth_token)
+
+# Define a dictionary of phone numbers and messages
+messages = {
+    '+919555340633': 'Something Happend.'
+}
+
+# Iterate over the dictionary and send messages
+for number, message in messages.items():
+    try:
+        message = client.messages.create(
+            body=message,
+            from_='+1 234 415 3915',
+            to=number
+        )
+        print(f"Message sent to {number} successfully. Message SID: {message.sid}")
+    except Exception as e:
+        print(f"Error sending message to {number}: {str(e)}")
